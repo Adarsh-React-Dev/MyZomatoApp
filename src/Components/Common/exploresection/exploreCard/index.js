@@ -12,6 +12,9 @@ import './exploreCard.css'
                   ?.map((item)=>item.name)
                   .slice(0,3);
  const bottomContainers = restaurant?.bottomContainers;
+ const goldOff = restaurant?.gold?.text; 
+ const goldOffs = restaurant?.gold?.offerValue; 
+ const goldImg = restaurant?.gold?.isGoldIcon; 
  const discount = offers.length>1 ?offers[1].text : offers.length===1 ? offers[0].text : null;
 
 
@@ -20,6 +23,7 @@ import './exploreCard.css'
     <div className='explore-card-cover'>
       <img src={coverImg} alt={name} className='explore-card-image'/>
     <div className='delivery-time'>{deliveryTime}</div>
+    {goldOff && <div className='gold-off absolute-center'>{}{goldOff}  {goldOffs}</div>}
     {discount && <div className='discount absolute-center'>{discount}</div>}
   </div>
   <div className="res-row">
